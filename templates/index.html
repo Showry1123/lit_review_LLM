@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36038374-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-36038374-1');
+    </script>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Processing App</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="/"><img src="/logo.png" alt="logo" style="width:30px; height:auto; margin-right:10px;" /> Data Processing App</a>
+                <button class="navbar-toggler" type="button" data-bs--toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex" id="navbarSupportedContent">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="page-header">
+                <h1>Upload a Text File and Generate Conclusions</h1>
+            </div>
+
+            <div id="JSerror" class="alert alert-warning alert-dismissible show" role="alert" style="display:none">
+                <button id="JSerror_dismiss" type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong></strong>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="control-group mb-2">
+                        <label><b>Fileformats: </b>&nbsp;.txt</label>
+                        <label><b>Maximum file size:</b>&nbsp;200MB</label>
+                    </div>
+                    <form action="/upload" enctype="multipart/form-data" method="post">
+                        <div class="control-group mb-3 form-control-lg p-0" style="width:400px;">
+                            <input class="form-control form-control-sm" id="userfileInput" type="file" name="file" required />
+                            <small class="form-text text-muted">Select the text file you want to process.</small>
+                        </div>
+                        <div class="control-group mb-3">
+                            <label for="abstract_query"><b>What do you want to conclude from the abstract?</b></label>
+                            <input type="text" name="abstract_query" id="abstract_query" class="form-control" required>
+                        </div>
+                        <div class="control-group mb-3">
+                            <label for="word_count"><b>How many words in the conclusion?</b></label>
+                            <input type="number" name="word_count" id="word_count" class="form-control" required>
+                        </div>
+                        <div class="control-group mb-3">
+                            <label for="conditions"><b>Conditions (optional):</b></label>
+                            <input type="text" name="conditions" id="conditions" class="form-control">
+                        </div>
+                        <div class="control-group" style="margin-top:10px;">
+                            <input id="btnSubmit" style="width:200px;" type="submit" class="btn btn-primary" name="upload" value="Generate Conclusions" />
+                        </div>
+                        <input name="__RequestVerificationToken" type="hidden" value="token_placeholder" />
+                    </form>
+                    <div id="uploadProgressContainer" style="display:none">
+                        <p><b>Processing file...</b></p>
+                        <div id="uploadprogress" class="progress" style="height:30px">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width:3em; width: 0%; height:30px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:336px;height:280px"
+                         data-ad-client="ca-pub-3991242167081823"
+                         data-ad-slot="4805786595"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            <hr />
+
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3991242167081823"
+                 data-ad-slot="4229193791"
+                 data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </main>
+        <hr>
+        <footer>
+            <p style="display:inline-block;float:left;">&copy; Data Processing App 2024</p>
+            <p style="float:right;">
+                <a href="/privacy">privacy policy</a> |
+                <a href="/about">about</a> |
+                <a href="/disclaimer">disclaimer</a> |
+                Questions? Contact us at <a href="mailto:info@dataprocessing.com">info@dataprocessing.com</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js" integrity="sha256-vrn14y7WH7zgEElyQqm2uCGSQrX/xjYDjniRUQx3NyU=" crossorigin="anonymous"></script>
+    <script>
+        $('#userfileInput').on('change', function (e) {
+            ShowErrorIfSelectedFileTooLarge();
+        });
+
+        function ShowErrorIfSelectedFileTooLarge() {
+            var fileControl = $('#userfileInput')[0];
+            var selectedFileFileSize = fileControl.files[0].size;
+            if(selectedFileFileSize > 200 * 1024 * 1024) {
+                alert('The chosen file is too large, please choose a smaller file.');
+                $('#userfileInput').val(null);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        $('#JSerror_dismiss').click(function (e) {
+            $('#JSerror').hide();
+        });
+
+        $('#btnSubmit').click(function (e) {
+            if (!ShowErrorIfSelectedFileTooLarge()) {
+                HideError();
+                if (new XMLHttpRequest().upload) {
+                    var url = '/upload';
+
+                    var file = $('#userfileInput').prop("files")[0]
+                    var data = new FormData();
+                    data.append("file", file);
+                    data.append("abstract_query", $('#abstract_query').val());
+                    data.append("word_count", $('#word_count').val());
+                    data.append("conditions", $('#conditions').val());
+
+                    ShowProgressBar();
+
+                    var request = new XMLHttpRequest();
+
+                    request.upload.addEventListener("progress", function (evt) {
+                        if (evt.lengthComputable) {
+                            var percentComplete = (evt.loaded / evt.total) * 100;
+                            UpdateProgressBar(percentComplete);
+                        }
+                    }, false);
+
+                    request.open('POST', url, true);
+                    request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                    request.onload = function () {
+                        if (this.status >= 200 && this.status < 400) {
+                            HideProgressBar();
+                            var blob = new Blob([this.response], { type: 'text/csv' });
+                            var url = window.URL.createObjectURL(blob);
+                            var a = document.createElement('a');
+                            a.style.display = 'none';
+                            a.href = url;
+                            a.download = 'conclusions.csv';
+                            document.body.appendChild(a);
+                            a.click();
+                            window.URL.revokeObjectURL(url);
+                        } else {
+                            ShowError('Could not process the file.');
+                            HideProgressBar();
+                        }
+                    };
+
+                    request.onerror = function () {
+                        ShowError('Could not process the file.');
+                        HideProgressBar();
+                    };
+
+                    request.send(data);
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        });
+
+        function ShowError(error) {
+            $('#JSerror').show();
+            $('#JSerror strong').text(error);
+        }
+        function HideError() {
+            $('#JSerror').hide();
+            $('#JSerror strong').text('');
+        }
+
+        function ShowProgressBar() {
+            $('#uploadProgressContainer').show();
+            $('#btnSubmit').prop('disabled', true);
+        }
+
+        function UpdateProgressBar(percentage) {
+            var progressBar = $("#uploadProgressContainer .progress-bar");
+            progressBar.prop('aria-valuenow', percentage);
+            progressBar.text(percentage + '%');
+            progressBar.css("width", percentage + '%');
+        }
+
+        function HideProgressBar() {
+            $('#uploadProgressContainer').hide();
+            $('#btnSubmit').prop('disabled', false);
+            UpdateProgressBar(0);
+        }
+    </script>
+</body>
+</html>
