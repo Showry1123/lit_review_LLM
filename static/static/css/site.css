@@ -1,0 +1,37 @@
+body {
+    padding-top: 56px;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.page-header {
+    margin-top: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.footer a {
+    margin-left: 10px;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.alert-primary ul {
+    list-style: none;
+    padding-left: 0;
+}
