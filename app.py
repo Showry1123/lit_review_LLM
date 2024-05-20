@@ -65,7 +65,8 @@ def extract_paper_info(text):
 def get_gpt_response(abstract, abstract_query, word_count, conditions):
     client = OpenAI(api_key=os.getenv('my_sk'))
     condition_text = f" You only have following answers: {conditions}. Answer others if no options suitable." if conditions else ""
-    prompt = (f"Summarize '{abstract_query}' with only {word_count} words (only generate completed phrase or sentence):"
+    prompt = (f"You are a helpful research assistant who is helping with literature review of a research idea. You will be provided with an abstract of a scientific document.
+              Summarize '{abstract_query}' with only {word_count} words:"
               f"{condition_text} \n\n{abstract}")
     response = client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
