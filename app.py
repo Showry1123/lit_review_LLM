@@ -64,14 +64,13 @@ def extract_paper_info(text):
 # Function to get GPT response
 def get_gpt_response(abstract, abstract_query, word_count, conditions):
     client = OpenAI(api_key=os.getenv('my_sk'))
-    condition_text = f" You only have following answers: {conditions}. Answer others if no options suitable." if conditions else ""
-    prompt = (f"You are a helpful research assistant who is helping with literature review of a research idea. You will be provided with an abstract of a scientific document.
-              Summarize '{abstract_query}' with only {word_count} words:"
-              f"{condition_text} \n\n{abstract}")
+    condition_text = f" You should only use the following answers: {conditions}. If none of the options are suitable, provide the best possible answer." if conditions else ""
+    prompt = (f"You are an expert research assistant with extensive experience in biomedicine and health science, helping with a literature review for a research idea. You are adept at analyzing and summarizing scientific documents, including abstracts from various study designs such as randomized controlled trials, cohort studies, case-control studies, cross-sectional studies, and systematic reviews. Your task is to read and analyze the abstract provided and summarize the specific aspect requested by the user, considering the methodology, objectives, sample size, data collection techniques, and analysis methods used in the study."
+              f"\n\nYou will be provided with an abstract of a scientific document. Summarize '{abstract_query}' with only {word_count} words:"
+              f"{condition_text} \n\nAbstract:\n{abstract}")
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-0125",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=int(word_count),
         stream=False
     )
     return response.choices[0].message.content.strip()
