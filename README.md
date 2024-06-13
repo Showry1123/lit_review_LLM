@@ -1,7 +1,7 @@
 ## Project name: Research Abstract Summary App
 ## Author: Showry Peng
 
-## Objective: This project aims to improve the efficiency of conducting literature review by simplify several steps in paper screening.
+## Objective: This project aims to improve the efficiency of conducting literature review by simplify paper screening.
 ## Instruction: 
 1. Firstly you need to download all the papers that you want to explore from PubMed as a .txt file (currently only PubMed supported). 
 2. Set openai API key as my_sk in .env and run app.py
