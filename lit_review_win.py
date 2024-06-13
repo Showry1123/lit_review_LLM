@@ -6,6 +6,11 @@ from openai import OpenAI
 import re
 import webbrowser
 import datetime
+import sys
+
+
+sys.setrecursionlimit(2000)  # Default is usually 1000
+
 
 directory = "uploads"
 if not os.path.exists(directory):
