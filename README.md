@@ -10,7 +10,7 @@ Instructions: This application has 3 different versions which are able to run on
 *Most importantly, this app will run on your computer locally and never store your data and API except what you send to openai, which are the .txt file and your requests.
 
 ## Executive App 
-Download from here [MacOS](https://drive.google.com/file/d/1j4N2mp6M247miyqN4jDUM_f-sz8xqvAW/view?usp=sharing) or [Win](https://drive.google.com/file/d/1RvWrEQxmwEAzLwZ9WKzgUfcHN7R2UNQJ/view?usp=sharing)
+Download from here [MacOS](https://drive.google.com/file/d/1noQj8qnohIlzFrcv-JIhXOIANV1fnmuM/view?usp=sharing) or [Win]([https://drive.google.com/file/d/1RvWrEQxmwEAzLwZ9WKzgUfcHN7R2UNQJ/view?usp=sharing](https://drive.google.com/file/d/1K4VU_cn1M-lI3WTUG4g0IAzFA483ZihB/view?usp=sharing))
 
 1. Firstly you need to download all the papers that you want to explore from PubMed as a .txt file (currently only PubMed supported). 
 2. Run your app and insert your openai API.
@@ -31,7 +31,7 @@ Download from here [MacOS](https://drive.google.com/file/d/1j4N2mp6M247miyqN4jDU
 7. Click on "generate", then you'll have a .csv downloading.
 8. In the csv file, you would see titles, authors, DOI, abstract and the summary of what you requested.
 
-Watch instruction video on web app [here](https://drive.google.com/file/d/1xgkhhTIjsc4-3qv3LRe2aZGZOF2Sh7yH/view?usp=sharing)
+Watch instruction video on using web app [here](https://drive.google.com/file/d/1xgkhhTIjsc4-3qv3LRe2aZGZOF2Sh7yH/view?usp=sharing)
 
 
 Condition example for study type: Case-Control Studies, Systematic Review, Observation, Case Studies, Longitudinal Design, Cohort Study, Case Report, Experiments, Correlation, Preclinical Studies, Experimental Design, Randomized Controlled Trial, Cross-Sectional Studies,, Meta-Analysis, Descriptive Design, Animal Studies, Prospective Study
