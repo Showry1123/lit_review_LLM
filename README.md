@@ -4,6 +4,7 @@ Author: Showry Peng
 Objective: This project aims to improve the efficiency of conducting literature review by simplify paper screening.
 
 Instructions: This application has 3 different versions which are able to run on MacOS, WindowsOS and broswers. You can simply download the executive packages to run it. Or you can choose to run it in your browser, but this way will be more complicated.
+
 *Most importantly, this app will run on your computer locally and never store your data and API except what you send to openai, which are the .txt file and your requests.
 
 ## Executive App 
