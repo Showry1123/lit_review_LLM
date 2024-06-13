@@ -13,7 +13,7 @@ if not os.path.exists(directory):
 
 root = tk.Tk()
 root.title("Abstract Summary App")
-root.geometry("600x400")
+root.geometry("600x600")
 
 status_label = tk.Label(root, text="")
 status_label.pack(side="bottom", fill="x", anchor="w")
@@ -171,26 +171,53 @@ def generate_csv():
 generate_button = tk.Button(root, text="Generate CSV", command=generate_csv)
 generate_button.pack(pady=20)
 
+
+
+
+
 def send_email():
-    webbrowser.open("mailto:xpeng32@jh.edu?Subject=Hello%20from%20Your%20App")
+    try:
+        webbrowser.open("mailto:xpeng32@jh.edu?Subject=Hello%20from%20Your%20App")
+    except Exception as e:
+        messagebox.showerror("Error", "Failed to open email client: " + str(e))
 
-# Create a frame for the contact information at the bottom
+def open_linkedin():
+    try:
+        webbrowser.open("https://www.linkedin.com/in/showrypeng/")
+    except Exception as e:
+        messagebox.showerror("Error", "Failed to open LinkedIn: " + str(e))
+
+def open_donation_link():
+    webbrowser.open('https://www.paypal.com/paypalme/yoshowry')
+
+
+# Frame for contact information
 contact_frame = tk.Frame(root)
-contact_frame.pack(side="bottom", fill="x")
+contact_frame.pack(side="top", fill="x", expand=True)
 
-# Email Button for direct contact
-email_button = tk.Button(contact_frame, text="Contact: xpeng32@jh.edu", command=send_email, fg="blue", cursor="hand2", relief="flat")
-email_button.pack(side="left", padx=10, pady=10)
-
-# Personal or developer information
+# Developer information
 personal_info_label = tk.Label(contact_frame, text="Developed by: Showry Peng", fg="grey")
-personal_info_label.pack(side="left", padx=10, pady=10)
+personal_info_label.pack(side="top", pady=(20, 0))
 
-# Copyright information
-copyright_label = tk.Label(contact_frame, text="© 2024 Showry Peng. All rights reserved.", fg="grey")
-copyright_label.pack(side="left", padx=10, pady=10)
+# Contact and feedback information
+contact_label = tk.Label(contact_frame, text="If you have any questions or feedbacks, please contact:", fg="grey")
+contact_label.pack(side="top", pady=(10, 0))
 
+# Links frame
+links_frame = tk.Frame(contact_frame)
+links_frame.pack(side="top", pady=(10, 0))
 
+# Email and LinkedIn links
+email_button = tk.Button(links_frame, text="Email: xpeng32@jh.edu", command=send_email, fg="blue", cursor="hand2", relief="flat")
+email_button.pack(side="left", padx=10)
+linkedin_button = tk.Button(links_frame, text="LinkedIn: Showry Peng", command=open_linkedin, fg="blue", cursor="hand2", relief="flat")
+linkedin_button.pack(side="left", padx=10)
+
+# Donation support
+support_label = tk.Label(contact_frame, text="Thanks for your support!", fg="grey")
+support_label.pack(side="top", pady=(10, 0))
+
+donate_button = tk.Button(contact_frame, text="Donate via PayPal", command=open_donation_link, fg="blue", cursor="hand2", relief="flat")
+donate_button.pack(side="top", pady=(0, 20))
 
 root.mainloop()
-
