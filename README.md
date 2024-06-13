@@ -1,5 +1,6 @@
 ## Project name: Research Abstract Summary App
-Author: Showry Peng
+Author: Showry Peng 
+Contact: xpeng32@jh.edu [linkedin_SPeng](https://www.linkedin.com/in/showrypeng/)
 
 Objective: This project aims to improve the efficiency of conducting literature review by simplify paper screening.
 
