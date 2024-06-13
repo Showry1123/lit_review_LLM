@@ -23,7 +23,7 @@ Download from here [MacOS](https://drive.google.com/file/d/1j4N2mp6M247miyqN4jDU
 
 ## Web App: 
 1. Firstly you need to download all the papers that you want to explore from PubMed as a .txt file (currently only PubMed supported). 
-2. Set openai API key as my_sk in .env and run app.py
+2. Set openai API key as my_sk in .env (create a new file) and run app.py
 3. Now you are on the app interface, then upload your text file.
 4. In the first box, fill with what you want chatGPT to summarize from every paper.
 5. Set your maximum number of words output (you don't want to waste your money).
