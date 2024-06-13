@@ -1,5 +1,4 @@
 .venv
 .env
 LLM.ipynb
-lit_review_win.py
-lit_review_mac.py
+lit_review_win.spec
