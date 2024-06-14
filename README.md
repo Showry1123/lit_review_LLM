@@ -12,6 +12,8 @@ Instructions: This application has 3 different versions which are able to run on
 ## Executive App 
 Download from here [MacOS](https://drive.google.com/file/d/1noQj8qnohIlzFrcv-JIhXOIANV1fnmuM/view?usp=sharing) or [Win](https://drive.google.com/file/d/1K4VU_cn1M-lI3WTUG4g0IAzFA483ZihB/view?usp=sharing)
 
+* Downloading or running the app might be blocked by system. Remember to tell your system to be cool.
+
 1. Firstly you need to download all the papers that you want to explore from PubMed as a .txt file (currently only PubMed supported). 
 2. Run your app and insert your openai API.
 3. Then upload your text file.
