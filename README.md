@@ -7,7 +7,7 @@ Objective: This project aims to improve the efficiency of conducting literature 
 
 Instructions: This application has 3 different versions which are able to run on MacOS, WindowsOS and broswers. You can simply download the executive packages to run it. Or you can choose to run it in your browser, but this way will be more complicated. And finally, a csv file will be generated and kept in the uploads file.
 
-* Most importantly, this app will run on your computer locally and never store your data and API except what you send to openai, which are the .txt file and your requests.
+* Most importantly, this app will run on your computer locally and never store your data and API, except what you send to openai, which are the .txt file and your requests.
 
 ## Executive App 
 Download from here [MacOS](https://drive.google.com/file/d/1noQj8qnohIlzFrcv-JIhXOIANV1fnmuM/view?usp=sharing) or [Win](https://drive.google.com/file/d/1K4VU_cn1M-lI3WTUG4g0IAzFA483ZihB/view?usp=sharing)
