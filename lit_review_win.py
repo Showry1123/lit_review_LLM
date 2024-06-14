@@ -6,6 +6,11 @@ from openai import OpenAI
 import re
 import webbrowser
 import datetime
+import sys
+
+
+sys.setrecursionlimit(2000)  # Default is usually 1000
+
 
 directory = "uploads"
 if not os.path.exists(directory):
@@ -13,11 +18,7 @@ if not os.path.exists(directory):
 
 root = tk.Tk()
 root.title("Abstract Summary App")
-<<<<<<< Updated upstream
 root.geometry("600x600")
-=======
-root.geometry("700x400")
->>>>>>> Stashed changes
 
 status_label = tk.Label(root, text="")
 status_label.pack(side="bottom", fill="x", anchor="w")
