@@ -33,7 +33,7 @@ Download from here [MacOS](https://drive.google.com/file/d/1noQj8qnohIlzFrcv-JIh
 7. Click on "generate", then you'll have a .csv downloading.
 8. In the csv file, you would see titles, authors, DOI, abstract and the summary of what you requested.
 
-# Watch instruction video on using web app [here](https://drive.google.com/file/d/1xgkhhTIjsc4-3qv3LRe2aZGZOF2Sh7yH/view?usp=sharing)
+* Watch instruction video on using web app [here](https://drive.google.com/file/d/1xgkhhTIjsc4-3qv3LRe2aZGZOF2Sh7yH/view?usp=sharing)
 
 
 Condition example for study type: Case-Control Studies, Systematic Review, Observation, Case Studies, Longitudinal Design, Cohort Study, Case Report, Experiments, Correlation, Preclinical Studies, Experimental Design, Randomized Controlled Trial, Cross-Sectional Studies,, Meta-Analysis, Descriptive Design, Animal Studies, Prospective Study
