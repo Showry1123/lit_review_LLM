@@ -1,4 +1,4 @@
-## Project name: Research Abstract Summary App
+## Project name: Literature Review HelperGPT
 Author: Showry Peng 
 
 Contact: xpeng32@jh.edu |  [linkedin_SPeng](https://www.linkedin.com/in/showrypeng/)
